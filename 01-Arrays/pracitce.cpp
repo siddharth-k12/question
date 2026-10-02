@@ -5,17 +5,18 @@
 using namespace std;
 
 void sum(int n){
-  if(n >= 5){
+   cout<<n<<" ";
+  if(n <= 1){
     return;
   }
-  n = n+ 1;
-  cout<<n<<" ";
+  n = n - 1;
+ 
   sum(n);
 }
 
 int main(){
 
-   sum(0);
+   sum(5);
   // cout<<a;
     return 0;
 }
