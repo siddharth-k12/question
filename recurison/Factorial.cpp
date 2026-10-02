@@ -1,7 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <cstring>
-// #include <utility>
 using namespace std;
 
 int sum(int n){
