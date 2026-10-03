@@ -1,19 +1,21 @@
 #include <iostream>
 #include <vector>
-#include <cstring>
-// #include <utility>
 using namespace std;
 
-int sum(int n){
-   if(n == 0){
-    return 0;
+bool sortedA(vector<int> arr, int n){
+   if(n == 0 || n == 1){
+      return true;
    }
-   return n = n + sum(n - 1);
+    return arr[n - 1] >= arr[n - 2] && sortedA(arr,n - 1);
 }
 
 int main(){
-
-   cout<<sum(4)<<" ";
-
+   vector<int> arr = {1,2,8,4,5};
+   int n = arr.size();
+   if(sortedA(arr,n)){
+      cout<<"true";
+   }else{
+       cout<<"false";
+   }
     return 0;
 }
