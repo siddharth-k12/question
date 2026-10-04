@@ -4,7 +4,7 @@ using namespace std;
 
 int binaryS(vector<int> arr, int target, int start, int end)
 {
-   if (start <= end)
+   if (start <= end) 
    {
       int mid = start + (end - start) / 2;
       if (arr[mid] == target)
