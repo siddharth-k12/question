@@ -2,30 +2,25 @@
 #include <vector>
 using namespace std;
 
-int binaryS(vector<int> arr, int target, int start, int end)
-{
-   if (start <= end) 
-   {
-      int mid = start + (end - start) / 2;
-      if (arr[mid] == target)
-         return mid;
-
-      if (arr[mid] < target)
-      {
-         return binaryS(arr, target, mid + 1, end);
+void sub(vector<int> arr,vector<int> newArr,int i ){
+   if(arr.size() == i){
+      for(int val : newArr){
+         cout<<val << " ";
       }
-      else
-      {
-         return binaryS(arr, target, start, mid - 1);
-      }
+      cout<<endl;
+      return;
    }
-   return -1;
+   newArr.push_back(arr[i]);
+    sub(arr,newArr,i+1);
+
+   newArr.pop_back();
+     sub(arr,newArr,i+1);
 }
 
 int main()
 {
-   vector<int> arr = {-1, 0, 5, 7, 9};
-   int target = 2;
-   cout << binaryS(arr, target, 0, arr.size() - 1);
+   vector<int> arr = {1,2,3};
+   vector<int> newArr;
+   sub(arr,newArr,0);
    return 0;
 }
